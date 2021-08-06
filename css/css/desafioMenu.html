@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+        body {
+            background-color: rgba(0, 0, 0, 0.205);
+        }
+        .cabecalho * {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cabecalho {
+            position: fixed;
+            font-size: 1.1em;
+            background-color: #303030;
+            height: 70px;
+            width: 100%;
+            border-bottom: solid 5px rgba(0, 162, 255, 0.979);
+            box-sizing: border-box;
+        }
+
+        .logo a img{
+            padding: 4px;
+            padding-left: 12px;
+            height: 54px;
+            width: 286px;
+        }
+
+        .cabecalho * {
+            display: inline-block;
+        }
+        
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            right: 5px;
+            color: #FFF;
+            background-color: #505050;
+            border-radius: 3px;
+            border: none;
+            padding: 12px;
+            margin: 10px;
+        }
+        
+        .menu {
+            overflow: hidden;
+            position: absolute;
+            left: 286px;
+            top: 0px;
+            height: 100%;
+            box-sizing: border-box;
+            margin-left: 40px;
+        }
+
+        .botoes-menu {
+            padding: 16px 12px;
+            margin: 3px;
+        }
+
+        #botao-login:hover, .botoes-menu:hover, .menu-toggle:hover {
+            background-color: rgba(0, 162, 255, 0.979);
+            border-radius: 2px;
+            color: #000;
+        }
+
+        .autenticacao {
+            height: 100%;
+            position: absolute;
+            right: 21px;
+        }
+
+        .autenticacao a {
+            padding: 16px 12px;
+            margin: 3px;
+        }
+
+        #botao-registrar{
+            margin: auto;
+            padding: 8px 14px;
+            background-color: rgb(167, 17, 17);
+            border-radius: 20px;
+        }
+        .selected {
+            color: #000;
+            border-radius: 2px;
+            padding: 16px 12px;
+            background: linear-gradient( to bottom, rgba(0, 162, 255, 0.979), #303030);
+        }
+
+        @media (max-width: 850px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+        @media (max-width: 630px) {
+            .menu {
+                display: none;
+            }
+            .menu-toggle {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a class="botoes-menu" href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a class="botoes-menu" href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a class="botoes-menu" href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a class="botoes-menu" href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login" id="botao-login">Login</a>
+            <a href="#registrar" id="botao-registrar">Registrar</a>
+        </aside>
+    </header>
+<!--     
+    <div id="inicio" style="display:block;height: 1000px;width: 100%;background-color: red;"></div>
+    <div id="cursos" style="display:block;height: 1000px;width: 100%;background-color: blue;"></div>
+    <div id="sobre" style="display:block;height: 1000px;width: 100%;background-color: green;"></div>
+    <div id="contato" style="display:block;height: 1000px;width: 100%;background-color: yellow;"></div> -->
+ 
+    <script>
+        window.onhashchange = function (e) {
+            const oldUrl = e.oldURL.split('#')[1]
+            const newUrl = e.newURL.split('#')[1]
+
+            const oldLink = document.querySelector(`.menu a[href='#${oldUrl}']`)
+            const newLink = document.querySelector(`.menu a[href='#${newUrl}']`)
+            if(oldLink.classList.contains('selected')) {
+                oldLink.classList.remove('selected')
+            }
+            newLink.classList.add('selected')
+        }
+    </script>
+</body>
+
+</html>

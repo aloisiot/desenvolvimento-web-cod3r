@@ -1,0 +1,66 @@
+<table>
+    <!--Título da tabela-->
+    <caption>Produtos</caption>
+
+    <!--Cabeçalho da tabela-->
+    <thead>
+        <!--Nova linha contendo os elementos do cabeçalho-->
+        <tr>
+            <!--Coluna 1-->
+            <th>Produto</th>
+            <!--Coluna 2-->
+            <th>Preço</th>
+            <!--Coluna 3-->
+            <th>Quantidade</th>
+            <!--Coluna 4-->
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <!--Corpo da tabela-->
+    <tbody>
+        <tr>
+            <td>iPad</td>
+            <td>3000</td>
+            <td>12</td>
+            <td>36000</td>
+        </tr>
+        <tr>
+            <td>Galaxy S9</td>
+            <td>3500</td>
+            <td>4</td>
+            <td>14000</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>50000</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
